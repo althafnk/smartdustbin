@@ -1,8 +1,7 @@
 #include <SoftwareSerial.h> // library for serial communication
 #include <Servo.h> // library for servo motor rotating
 Servo myservo; // servo motor object
-SoftwareSerial gsmSerial(2, 3); // rx,tx // new object for gsm module with rxpin=3 and tx
-pin=2(arduino board)
+SoftwareSerial gsmSerial(2, 3); // rx,tx // new object for gsm module with rxpin=3 and txpin=2(arduino board)
 int pos = 0; // angle of servo motor
 //************LID OPENING ULTRASONIC SENSOR PINS **********
 #define trigPin1 10
@@ -28,8 +27,7 @@ delay(1000);
 Serial.println("Preparing to send SMS");
 }
 void loop()
-2
-7
+
 {
 Serial.begin(9600);
 digitalWrite(trigPin1, LOW);
@@ -57,7 +55,7 @@ void Sendmessage() {
 digitalWrite(trigPin2, LOW);
 delayMicroseconds(2);
 digitalWrite(trigPin2, HIGH);
-28
+
 delayMicroseconds(10);
 digitalWrite(trigPin2, LOW);
 duration2 = pulseIn(echoPin2, HIGH);
